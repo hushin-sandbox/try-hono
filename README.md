@@ -1,58 +1,22 @@
-# Hono minimal project
+hono を触ってみた
 
-This is a minimal project with [Hono](https://github.com/honojs/hono/) for Cloudflare Workers.
+## refs
 
-## Features
+- https://github.com/honojs/hono-minimal
+- https://yusukebe.com/posts/2022/hono-40-things/
 
-- Minimal
-- TypeScript
-- Wrangler to develop and deploy.
-- [Jest](https://jestjs.io/ja/) for testing.
-
-## Usage
-
-Initialize
+## 作業ログ
 
 ```
-npx create-cloudflare my-app https://github.com/honojs/hono-minimal
+npx wrangler generate try-hono honojs/hono-minimal
 ```
 
-Install
+でひな形作ったが、パッケージが古かったのでアップデートした。
 
 ```
-yarn install
+npx wrangler kv:namespace create COUNTERS
 ```
 
-Develop
+で KV を作って wrangler.toml に書き込み。
 
-```
-yarn dev
-```
-
-Test
-
-```
-yarn test
-```
-
-Deploy
-
-```
-yarn deploy
-```
-
-## Examples
-
-See: <https://github.com/honojs/examples>
-
-## For more information
-
-See: <https://honojs.dev>
-
-## Author
-
-Yusuke Wada <https://github.com/yusukebe>
-
-## License
-
-MIT
+ローカルで src/index.html を開いてアクセスカウンターが動くのを確認。
